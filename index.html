@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maman Bachir — Portfolio Professionnel</title>
+    <!-- Bibliothèque d'icônes Font Awesome (CDN fonctionnel) -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Untitled-1.css">
+</head>
+<body>
+
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+        <div class="logo">mbachir<span>.dev</span></div>
+        <div class="nav-right">
+            <!-- Bouton pour basculer en Mode Sombre -->
+            <button id="dark-mode-toggle" class="btn-toggle">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <div class="nav-links">
+                <a href="#accueil">Accueil</a>
+                <a href="#competences">Compétences</a>
+                <a href="#projets">Projets</a>
+                <a href="#contact" class="btn-contact">Me contacter</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+        <!-- Section Accueil (Hero) -->
+        <section id="accueil" class="hero-section">
+            <div class="badge">Disponible pour de nouveaux projets</div>
+            <h1>Bonjour, je suis <span class="highlight">Maman Bachir</span></h1>
+            <p class="subtitle">Développeur Web Junior spécialisé en intégration HTML / CSS & Admin Systèmes</p>
+            <div class="hero-buttons">
+    <a href="#projets" class="btn-primary">Voir mes réalisations</a>
+    
+    <!-- BOUTON MIS À JOUR AVEC LE CADRE LUMINEUX -->
+    <a href="CV_Maman_Bachir.pdf" download="CV_Maman_Bachir.pdf" 
+   style="display: inline-flex !important; align-items: center; justify-content: center; gap: 10px; padding: 12px 26px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; border: 2px solid #00f2fe !important; color: #00f2fe !important; background: transparent !important; box-shadow: 0 0 12px rgba(0, 242, 254, 0.4), inset 0 0 8px rgba(0, 242, 254, 0.2) !important; cursor: pointer; transition: all 0.3s ease;">
+    <i class="fa-solid fa-download"></i> Télécharger mon CV
+    </a>
+</div>
+
+        </section>
+
+        <!-- Section Compétences -->
+        <section id="competences">
+            <div class="section-header">
+                <h2>Mes Compétences</h2>
+                <p>Les technologies et environnements que je maîtrise au quotidien.</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fa-brands fa-html5"></i></div>
+                    <h3>HTML5 / CSS3</h3>
+                    <p>Création d'interfaces web fluides, modernes, esthétiques et entièrement responsives.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-server"></i></div>
+                    <h3>Admin Systèmes & Réseaux</h3>
+                    <p>Configuration de serveurs Linux (Ubuntu), déploiement DNS (BIND9) et sécurisation des accès SSH.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3>Outils & Workflow</h3>
+                    <p>Maîtrise complète de VS Code, gestion de versions avec Git, et gestion de serveurs VPS.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Projets avec Galerie d'Images -->
+        <section id="projets">
+            <div class="section-header">
+                <h2>Mes Réalisations</h2>
+                <p>Découvrez mes projets techniques en administration systèmes, réseaux et développement web.</p>
+            </div>
+            
+            <div class="cards-grid">
+                <!-- Projet 1 -->
+                <div class="card project-card">
+                    <div class="project-image-wrapper">
+                        <img src="images/projet1.png" alt="Aperçu Rapport ANSI" class="project-img">
+                        <div class="project-tag">Systèmes & Sécurité</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Rapport de Stage — ANSI</h3>
+                        <p>Analyse approfondie de l'administration système et de la sécurisation des architectures réseaux au sein de l'Agence Nationale pour la Société d'Information.</p>
+                        <a href="rapport.pdf" target="_blank" class="project-link">Consulter l'étude <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="card project-card">
+                    <div class="project-image-wrapper">
+                        <img src="images/projet2.png" alt="Aperçu Configuration DNS" class="project-img">
+                        <div class="project-tag">Infrastructure Réseau</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Serveur DNS BIND9 & Apache</h3>
+                        <p>Déploiement complet sous Ubuntu Server. Configuration rigoureuse des zones de recherche directes, inverses (PTR), redirection des flux et durcissement des accès SSH.</p>
+                        <a href="images/architecture.png" target="_blank" class="project-link">Voir l'architecture <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="card project-card">
+                    <div class="project-image-wrapper">
+                        <img src="images/projet3.jfif" alt="Aperçu Site Vitrine" class="project-img">
+                        <div class="project-tag">Développement Web</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Interface Vitrine Responsive</h3>
+                        <p>Intégration d'un site web moderne et fluide en HTML5 et CSS3. Optimisation de l'affichage pour mobile, gestion du multi-page et intégration de thèmes dynamiques.</p>
+                        <!-- CORRECTION DU LIEN : Point de redirection direct vers votre production globale sur GitHub Pages -->
+                        <a href="https://github.io" target="_blank" class="project-link">Visiter le site <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact Complète -->
+        <section id="contact">
+            <div class="section-header">
+                <h2>Travaillons ensemble</h2>
+                <p>Une question relative à un projet réseau ou un besoin en intégration web ? Écrivez-moi !</p>
+            </div>
+            <form action="https://formspree.io/f/xaeqyyyz" method="POST" class="premium-form">
+                <div class="form-group">
+                    <label for="name">Nom complet</label>
+                    <input type="text" id="name" name="name" placeholder="Ex. Jean Dupont" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Adresse Email</label>
+                    <input type="email" id="email" name="_replyto" placeholder="Ex. jean.dupont@mail.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Votre message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Expliquez-moi votre besoin en détail..." required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Envoyer le message <i class="fa-regular fa-paper-plane"></i></button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Maman Bachir. Conçu de manière professionnelle. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Script pour le Mode Sombre -->
+    <script>
+        const toggleBtn = document.getElementById('dark-mode-toggle');
+        const icon = toggleBtn.querySelector('i');
+        
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            if(document.body.classList.contains('dark-theme')) {
+                icon.className = 'fa-solid fa-sun';
+            } else {
+                icon.className = 'fa-solid fa-moon';
+            }
+        });
+    </script>
+</body>
+</html>

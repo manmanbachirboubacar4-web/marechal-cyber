@@ -1,0 +1,446 @@
+/* ==========================================================================
+   VARIABLES & REINITIALISATION
+   ========================================================================== */
+:root {
+  --cyan: #00f2fe;
+  --bleu-profond: #0a1128;
+  --bleu-tech: #1c2541;
+  --texte-blanc: #ffffff;
+  --texte-sombre: #1c2541;
+  --doux: #657786;
+  --ligne: #e1e8ed;
+  --fond-clair: #f8f9fa;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--texte-sombre); background: #ffffff; line-height: 1.6; }
+h1, h2, h3 { font-weight: 700; }
+a { color: inherit; text-decoration: none; transition: var(--transition); }
+.wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+/* ==========================================================================
+   HEADER & BACKGROUND NUMÉRIQUE PREMIUM
+   ========================================================================== */
+header {
+  position: relative;
+  /* Remplacez strictement par le nom exact de votre fichier */
+  background-image: url('mon-ordinateur.jpg') !important; 
+  
+  /* SOLUTION AU DÉSORDRE : L'image s'adapte parfaitement à l'écran sans se déformer */
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  
+  /* STABILISATION : Désactivation du mode 'fixed' qui cause souvent des bugs d'affichage sur mobile et écrans moyens */
+  background-attachment: scroll !important; 
+  
+  color: #ffffff;
+  overflow: hidden;
+  padding: 40px 0 60px; /* Ajoute de l'espace interne sans écraser le contenu */
+  z-index: 1;
+}
+
+
+/* Couche de dégradé sombre pour l'effet corporate et la lisibilité du texte */
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(10, 17, 40, 0.92) 0%, rgba(28, 37, 65, 0.85) 100%);
+  z-index: 1;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.marque {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+nav ul { display: flex; gap: 32px; list-style: none; font-size: 15px; font-weight: 500; }
+nav a { opacity: 0.8; }
+nav a:hover { opacity: 1; color: var(--cyan); }
+
+/* Zone d'accueil */
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding: 80px 0 100px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 4.5vw, 46px);
+  line-height: 1.2;
+  margin-bottom: 20px;
+  background: linear-gradient(120deg, #ffffff 30%, var(--cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p { font-size: 17px; color: #cbd5e1; margin-bottom: 36px; max-width: 48ch; }
+
+/* ==========================================================================
+   BOUTONS ET INTERACTIONS
+   ========================================================================== */
+.btns { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn { padding: 14px 30px; border-radius: 8px; font-weight: 600; font-size: 15px; text-align: center; }
+
+.btn-p {
+  background: var(--cyan);
+  color: var(--bleu-profond);
+  box-shadow: 0 4px 14px rgba(0, 242, 254, 0.3);
+}
+.btn-p:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 242, 254, 0.5);
+  background: #00d8e4;
+}
+
+.btn-s { border: 2px solid rgba(255, 255, 255, 0.3); color: var(--texte-blanc); }
+.btn-s:hover { border-color: var(--cyan); background: rgba(255, 255, 255, 0.05); transform: translateY(-2px); }
+
+/* ==========================================================================
+   BADGE TECHNIQUE (Effet Verre Dépoli / Glassmorphism)
+   ========================================================================== */
+.tech-badge {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: float 6s ease-in-out infinite; /* Micro-animation */
+}
+
+.tech-icon { font-size: 48px; margin-bottom: 16px; }
+.tech-badge h3 { font-size: 22px; margin-bottom: 8px; color: #fff; }
+.tech-badge p { font-size: 14px; color: #94a3b8; margin: 0; }
+
+.tech-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  background: rgba(0, 242, 254, 0.1);
+  color: var(--cyan);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #00e676;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00e676;
+}
+
+/* ==========================================================================
+   COMPOSANTS DE SECTIONS & GRILLES (CONTENU HORS HEADER)
+   ========================================================================== */
+section { padding: 80px 0; }
+section h2 { font-size: 32px; color: var(--bleu-profond); margin-bottom: 8px; }
+.intro { color: var(--doux); margin-bottom: 40px; font-size: 16px; }
+
+.grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+
+.service {
+  background: #ffffff;
+  border: 1px solid var(--ligne);
+  border-radius: 12px;
+  padding: 32px 24px;
+  transition: var(--transition);
+}
+.service:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(10, 17, 40, 0.06);
+  border-color: var(--cyan);
+}
+.service h3 { font-size: 19px; margin-bottom: 12px; color: var(--bleu-profond); }
+.service p { color: var(--doux); font-size: 15px; }
+
+/* Tarifs */
+.sable { background: var(--fond-clair); }
+table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+th, td { padding: 16px 24px; text-align: left; }
+th { background: var(--bleu-tech); color: #fff; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+td { border-bottom: 1px solid var(--ligne); }
+td:last-child { font-weight: 700; color: var(--bleu-profond); }
+
+/* Contact & Pied de page */
+.contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+.contact div { background: #fff; border: 1px solid var(--ligne); padding: 24px; border-radius: 8px; }
+.contact dt { font-weight: 700; color: var(--bleu-profond); margin-bottom: 4px; }
+.contact dd { color: var(--doux); }
+
+footer { background: var(--bleu-profond); color: #94a3b8; font-size: 14px; padding: 24px 0; border-top: 1px solid rgba(255,255,255,0.05); }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+
+/* Micro-animation de flottaison */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+/* ==========================================================================
+   ALIGNEMENT & STYLES DU FORMULAIRE DE CONTACT
+   ========================================================================== */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 40px;
+  align-items: start;
+  width: 100%;
+}
+
+.contact-infos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.contact-infos div {
+  background: #fff;
+  border: 1px solid var(--ligne);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.contact-form {
+  background: #ffffff;
+  border: 1px solid var(--ligne);
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(10, 17, 40, 0.04);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: var(--bleu-profond);
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--ligne);
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  transition: var(--transition);
+  background: var(--fond-clair);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--cyan);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(0, 242, 254, 0.1);
+}
+
+.form-submit {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  display: block;
+}
+
+/* ==========================================================================
+   CORRECTION DE LA SECTION CONTACT ET FIX PHOTO
+   ========================================================================== */
+section#contact { 
+  /* Fond blanc opaque à 100% pour bloquer l'image arrière-plan sous le texte */
+  background: #ffffff !important; 
+  padding: 80px 0;
+  position: relative;
+  z-index: 5;
+}
+
+/* Structure en deux colonnes propres (Infos à gauche / Formulaire à droite) */
+.contact-container {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+/* Bloc des informations pratiques (Gauche) */
+.contact-infos {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-infos div {
+  background: #f8f9fa;
+  border: 1px solid var(--ligne);
+  border-left: 4px solid var(--bleu-tech);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.contact-infos dt {
+  font-weight: 700;
+  color: var(--bleu-profond);
+  margin-bottom: 6px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.contact-infos dd {
+  color: var(--doux);
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Bloc du formulaire Formspree (Droite) */
+.contact-form {
+  flex: 1.3;
+  background: #ffffff;
+  border: 1px solid var(--ligne);
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(10, 17, 40, 0.06);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--bleu-profond);
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--ligne);
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--cyan);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(0, 242, 254, 0.15);
+}
+
+.form-submit {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  padding: 14px;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+/* Ajustement de la photo sur le body pour éviter de couper la tête */
+body {
+  background-image: url('mon-ordinateur.jpg'); /* Votre fichier image */
+  background-size: cover;
+  /* Aligne l'image par le HAUT pour afficher le visage et la tête sans coupure */
+  background-position: center top !important; 
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Adaptation parfaite pour les écrans de smartphones */
+@media(max-width: 768px) {
+  .contact-container {
+    flex-direction: column !important;
+    gap: 32px;
+  }
+}
+  border-color: var(--cyan);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(0, 242, 254, 0.1);
+}
+
+.form-submit {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  display: block;
+}
+
+/* ==========================================================================
+   INTEGRATION INTERACTIVE DU BOUTON WHATSAPP
+   ========================================================================== */
+.btn-whatsapp {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #25D366; /* Vert officiel WhatsApp */
+  color: #ffffff !important;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+  transition: all 0.3s ease;
+  width: auto;
+  margin-top: 10px;
+}
+
+.btn-whatsapp:hover {
+  background-color: #20ba59;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp:active {
+  transform: translateY(0);
+}
+
+/* Adaptation responsive pour les téléphones */
+@media(max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
