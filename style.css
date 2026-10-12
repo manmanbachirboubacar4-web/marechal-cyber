@@ -9,6 +9,20 @@
     --border: #e2e8f0;
     --navbar-bg: rgba(255, 255, 255, 0.85);
 }
+/* Nettoyage et forçage de l'effet lumineux cyan */
+#btn-cv-glow {
+  border: 2px solid #00f2fe !important;
+  color: #00f2fe !important;
+  background-color: transparent !important;
+  box-shadow: 0 0 15px #00f2fe, 0 0 30px rgba(0, 242, 254, 0.3) !important;
+}
+
+#btn-cv-glow:hover {
+  background-color: #00f2fe !important;
+  color: #0a1128 !important;
+  box-shadow: 0 0 25px #00f2fe, 0 0 50px #00f2fe !important;
+}
+
 
 /* Thème Sombre Professionnel */
 body.dark-theme {
@@ -461,4 +475,45 @@ footer p {
 }
 #contact .section-header {
     margin-bottom: 50px; /* Crée une séparation nette entre le titre et le formulaire */
+}
+/* ==========================================================================
+   BOUTON CV LUMINEUX ET DESIGN (EFFET NEON GLOW)
+   ========================================================================== */
+.btn-cv-glow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 8px; /* Assure la continuité avec votre bouton principal */
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  
+  /* Cadre et couleur du texte */
+  border: 2px solid var(--cyan, #00f2fe);
+  color: var(--cyan, #00f2fe) !important;
+  background: transparent;
+  
+  /* Rayonnement lumineux (Glow effect) */
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.2), 
+              inset 0 0 10px rgba(0, 242, 254, 0.1);
+              
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+/* Animation au survol de la souris */
+.btn-cv-glow:hover {
+  background: var(--cyan, #00f2fe);
+  color: #0a1128 !important; /* Le texte devient sombre pour rester lisible */
+  
+  /* Accentuation de la luminosité du cadre */
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.6), 
+              0 0 40px rgba(0, 242, 254, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-cv-glow:active {
+  transform: translateY(0);
 }

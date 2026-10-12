@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio Professionnel</title>
-    <!-- Bibliothèque d'icônes Font Awesome -->
+    <title>Maman Bachir — Portfolio Professionnel</title>
+    <!-- Bibliothèque d'icônes Font Awesome (CDN fonctionnel) -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Untitled-1.css">
@@ -35,16 +35,17 @@
             <div class="badge">Disponible pour de nouveaux projets</div>
             <h1>Bonjour, je suis <span class="highlight">Maman Bachir</span></h1>
             <p class="subtitle">Développeur Web Junior spécialisé en intégration HTML / CSS & Admin Systèmes</p>
-                       <div class="hero-buttons">
-                <a href="#projets" class="btn-primary">Voir mes réalisations</a>
-                <!-- Bouton Premium de téléchargement du CV -->
-                <a href="CV_Maman_Bachir.pdf.pdf" download="CV_Maman_Bachir.pdf.pdf" class="btn-cv">
-                    <i class="fa-solid fa-download"></i> Télécharger mon CV
-                </a>
-            </div>
+            <div class="hero-buttons">
+    <a href="#projets" class="btn-primary">Voir mes réalisations</a>
+    
+    <!-- BOUTON MIS À JOUR AVEC LE CADRE LUMINEUX -->
+    <a href="CV_Maman_Bachir.pdf" download="CV_Maman_Bachir.pdf" 
+   style="display: inline-flex !important; align-items: center; justify-content: center; gap: 10px; padding: 12px 26px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; border: 2px solid #00f2fe !important; color: #00f2fe !important; background: transparent !important; box-shadow: 0 0 12px rgba(0, 242, 254, 0.4), inset 0 0 8px rgba(0, 242, 254, 0.2) !important; cursor: pointer; transition: all 0.3s ease;">
+    <i class="fa-solid fa-download"></i> Télécharger mon CV
+    </a>
+</div>
 
         </section>
-
 
         <!-- Section Compétences -->
         <section id="competences">
@@ -71,7 +72,7 @@
             </div>
         </section>
 
-                <!-- Section Projets avec Galerie d'Images -->
+        <!-- Section Projets avec Galerie d'Images -->
         <section id="projets">
             <div class="section-header">
                 <h2>Mes Réalisations</h2>
@@ -114,16 +115,14 @@
                     <div class="project-content">
                         <h3>Interface Vitrine Responsive</h3>
                         <p>Intégration d'un site web moderne et fluide en HTML5 et CSS3. Optimisation de l'affichage pour mobile, gestion du multi-page et intégration de thèmes dynamiques.</p>
-                        <!-- Si vous utilisez un sous-dossier, spécifiez le fichier au bout du chemin -->
-                        <a href="dossier/index.html" class="btn-link">Visiter le site</a>
+                        <!-- CORRECTION DU LIEN : Point de redirection direct vers votre production globale sur GitHub Pages -->
+                        <a href="https://github.io" target="_blank" class="project-link">Visiter le site <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
-
-        <!-- Formulaire Connecté à votre Email -->
-          <!-- Section Contact Complète -->
+        <!-- Section Contact Complète -->
         <section id="contact">
             <div class="section-header">
                 <h2>Travaillons ensemble</h2>
@@ -143,7 +142,7 @@
                     <textarea id="message" name="message" rows="5" placeholder="Expliquez-moi votre besoin en détail..." required></textarea>
                 </div>
                 <button type="submit" class="btn-submit">Envoyer le message <i class="fa-regular fa-paper-plane"></i></button>
-           
+            </form>
         </section>
 
     </main>
