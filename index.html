@@ -13,7 +13,7 @@
 
     <!-- Barre de navigation -->
     <nav class="navbar">
-        <div class="logo">mbachir<span>.dev</span></div>
+        <div class="logo">M.Bachir<span>.dev</span></div>
         <div class="nav-right">
             <!-- Bouton pour basculer en Mode Sombre -->
             <button id="dark-mode-toggle" class="btn-toggle">
@@ -30,20 +30,37 @@
 
     <main class="container">
         
-        <!-- Section Accueil (Hero) -->
-        <section id="accueil" class="hero-section">
+        <!-- Section Accueil (Hero) modifiée pour intégrer les images à gauche et à droite -->
+<section id="accueil" class="hero-section">
+    <div class="hero-container">
+        
+        <!-- Image de GAUCHE -->
+        <div class="hero-side-img img-left">
+            <img src="images/illustration-gauche.jpg" alt="Illustration Tech Gauche">
+        </div>
+
+        <!-- Contenu CENTRAL (Ton texte et tes boutons actuels) -->
+        <div class="hero-content">
             <div class="badge">Disponible pour de nouveaux projets</div>
             <h1>Bonjour, je suis <span class="highlight">Maman Bachir</span></h1>
             <p class="subtitle">Développeur Web Junior spécialisé en intégration HTML / CSS & Admin Systèmes</p>
             <div class="hero-buttons">
-    <a href="#projets" class="btn-primary">Voir mes réalisations</a>
-    
-    <!-- BOUTON MIS À JOUR AVEC LE CADRE LUMINEUX -->
-    <a href="CV_Maman_Bachir.pdf" download="CV_Maman_Bachir.pdf" 
-   style="display: inline-flex !important; align-items: center; justify-content: center; gap: 10px; padding: 12px 26px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; border: 2px solid #00f2fe !important; color: #00f2fe !important; background: transparent !important; box-shadow: 0 0 12px rgba(0, 242, 254, 0.4), inset 0 0 8px rgba(0, 242, 254, 0.2) !important; cursor: pointer; transition: all 0.3s ease;">
-    <i class="fa-solid fa-download"></i> Télécharger mon CV
-    </a>
-</div>
+                <a href="#projets" class="btn-primary">Voir mes réalisations</a>
+                <!-- Ton bouton Premium de téléchargement du CV lumineux -->
+                <a href="CV_Maman_Bachir.pdf" download="CV_Maman_Bachir.pdf" id="btn-cv-glow"
+                   style="display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 10px !important; padding: 12px 26px !important; border-radius: 8px !important; font-size: 15px !important; font-weight: 600 !important; text-decoration: none !important; border: 2px solid #00f2fe !important; color: #00f2fe !important; background: transparent !important; box-shadow: 0 0 15px #00f2fe, 0 0 30px rgba(0, 242, 254, 0.3), inset 0 0 10px rgba(0, 242, 254, 0.2) !important; cursor: pointer !important; transition: all 0.3s ease !important;">
+                    <i class="fa-solid fa-download"></i> Télécharger mon CV
+                </a>
+            </div>
+        </div>
+
+        <!-- Image de DROITE -->
+        <div class="hero-side-img img-right">
+            <img src="images/illustration-droite.jpg" alt="Illustration Tech Droite">
+        </div>
+
+    </div>
+</section>
 
         </section>
 
