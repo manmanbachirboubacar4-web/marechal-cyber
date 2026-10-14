@@ -19,21 +19,22 @@
 
 #btn-cv-glow:hover {
   background-color: #00f2fe !important;
-  color: #0a1128 !important;
+  color: #8295d4 !important;
   box-shadow: 0 0 25px #00f2fe, 0 0 50px #00f2fe !important;
 }
 
 
 /* Thème Sombre Professionnel */
 body.dark-theme {
-    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #020617 100%);
-    --card-bg: #1e293b;
+    
+    --bg-gradient: linear-gradient(135deg, #f8faff 0%, #ebebee 100%);
+    --card-bg: #536d97;
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
     --primary: #3b82f6;
     --primary-glow: rgba(59, 130, 246, 0.25);
     --border: #334155;
-    --navbar-bg: rgba(15, 23, 42, 0.85);
+    --navbar-bg: rgba(78, 94, 129, 0.85);
 }
 
 /* Base */
@@ -516,4 +517,516 @@ footer p {
 
 .btn-cv-glow:active {
   transform: translateY(0);
+}
+/* ==========================================================================
+   ALIGNEMENT DU HERO AVEC IMAGES GAUCHE / DROITE
+   ========================================================================== */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.hero-content {
+  flex: 1.5;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.hero-side-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.hero-side-img img {
+  width: 100%;
+  max-width: 280px; /* Aligne la taille maximale de tes illustrations */
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  /* Optionnel : ajoute un léger effet de flottaison moderne */
+  animation: floatHero 6s ease-in-out infinite;
+}
+
+/* Donne un rythme d'animation alterné pour la gauche et la droite */
+.img-right img {
+  animation-delay: 3s;
+}
+
+/* Animation douce de flottaison */
+@keyframes floatHero {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* RESPONSIVE MOBILE : On empile proprement et cache les images latérales sur petit écran */
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-side-img {
+    display: none; /* Cache les images secondaires sur smartphone pour privilégier ton texte */
+  }
+}
+/* ==========================================================================
+   STRUCTURE HERO PROFESSIONNELLE ET ULTRA-RESPONSIVE
+   ========================================================================== */
+.hero-section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column; /* Par défaut sur mobile : vertical propre */
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.hero-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  z-index: 5;
+}
+
+/* Conteneur des deux images côte à côte */
+.hero-images-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.hero-side-img {
+  flex: 1;
+  max-width: 250px;
+}
+
+.hero-side-img img {
+  width: 100%;
+  height: 280px; /* Force une hauteur harmonieuse et carrée sur mobile */
+  object-fit: cover; /* Recadre proprement l'image sans l'étirer */
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 242, 254, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.hero-side-img img:hover {
+  transform: scale(1.03);
+}
+
+/* ==========================================================================
+   AFFICHAGE POUR LES ORDINATEURS (Écrans larges > 992px)
+   ========================================================================== */
+@media (min-width: 992px) {
+  .hero-container {
+    flex-direction: row; /* Aligne le texte à gauche et le bloc d'images à droite */
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .hero-content {
+    align-items: flex-start;
+    text-align: left;
+    flex: 1.2;
+  }
+
+  .hero-images-group {
+    flex: 1;
+    justify-content: flex-end;
+    max-width: none;
+  }
+
+  .hero-side-img {
+    max-width: 220px;
+  }
+
+  .hero-side-img img {
+    height: 340px; /* Plus grand et élancé sur grand écran d'ordinateur */
+  }
+}
+
+/* ==========================================================================
+   AJUSTEMENTS POUR LES PETITS TÉLÉPHONES (< 576px)
+   ========================================================================== */
+@media (max-width: 576px) {
+  .hero-images-group {
+    gap: 12px;
+    padding: 0 10px;
+  }
+  
+  .hero-side-img img {
+    height: 180px; /* Taille miniature parfaite pour ne pas étirer l'écran du téléphone */
+    border-radius: 12px;
+  }
+}
+/* ==========================================================================
+   BARRE DE NAVIGATION PREMIUM (JEUX DE LUMIÈRE & GLASSMORPHISM)
+   ========================================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  /* Effet de verre dépoli haut de gamme (translucide) */
+  background: rgba(10, 17, 40, 0.75) !important; 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+}
+
+/* Ligne néon dynamique tout en haut ou tout en bas du ruban */
+.navbar-glow-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  /* Dégradé de couleurs fluides (Cyan, Indigo, Violet) */
+  background: linear-gradient(90deg, #00f2fe, #2D3F8A, #9A3D1F, #00f2fe);
+  background-size: 300% 100%;
+  animation: waveGlow 4s linear infinite; /* Animation continue du jeu de lumière */
+}
+
+.navbar-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo stylisé */
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff !important;
+  letter-spacing: 0.5px;
+}
+.logo span {
+  color: var(--cyan, #00f2fe);
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Liens textuels du menu (Les points) */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-item {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 15px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  padding: 6px 0;
+  transition: all 0.3s ease;
+}
+
+.nav-item i {
+  font-size: 14px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+/* Effet de survol sur les points du menu (Ligne de lumière sous chaque lien) */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--cyan, #00f2fe);
+  box-shadow: 0 0 8px var(--cyan, #00f2fe);
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+  color: var(--cyan, #00f2fe) !important;
+}
+
+.nav-item:hover i {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* Bouton "Me contacter" Lumineux réajusté */
+.btn-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #00f2fe 0%, #2D3F8A 100%) !important;
+  color: #ffffff !important;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-contact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 242, 254, 0.6);
+  background: linear-gradient(135deg, #2D3F8A 0%, #00f2fe 100%) !important;
+}
+
+/* Bouton bascule de thème sombre */
+.btn-toggle {
+  background: rgba(238, 234, 234, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-toggle:hover {
+  background: rgba(0, 242, 254, 0.15);
+  color: var(--cyan, #00f2fe);
+  border-color: var(--cyan, #00f2fe);
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+}
+
+/* ==========================================================================
+   ANIMATION DU FLUX LUMINEUX (KEYFRAMES)
+   ========================================================================== */
+@keyframes waveGlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+/* Ajustement de l'espacement global pour éviter que le menu cache le haut du site */
+body {
+  padding-top: 75px;
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Cache le menu brut pour pouvoir intégrer un menu burger propre plus tard */
+  }
+}
+/* ==========================================================================
+   CORRECTION DE L'ESPACEMENT ET ALIGNEMENT DE LA NAVBAR
+   ========================================================================== */
+.navbar-container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  
+  /* FORCE LA SÉPARATION : Pousse le logo à gauche et le reste à droite */
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important; 
+}
+
+.nav-right {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  /* Espace spacieux entre le bouton de thème et la liste des liens */
+  gap: 32px !important; 
+}
+
+.nav-links {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  /* Espace équilibré entre chaque point du menu (Accueil, Projets...) et le bouton final */
+  gap: 28px !important; 
+}
+
+/* S'assure que le logo reste bien à sa place à l'extrême gauche */
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff !important;
+  white-space: nowrap; /* Empêche le logo de s'écraser sur deux lignes */
+}
+/* ==========================================================================
+   EFFET DE FOND PORTFOLIO BRILLANT & SCINTILLANT
+   ========================================================================== */
+body {
+  /* Arrière-plan sombre avec un effet de particules lumineuses diffuses */
+  background-color: #963333 !important;
+  background-image: 
+    radial-gradient(rgb(87, 57, 57), rgba(255,255,255,.2) 2px, transparent 40px),
+    radial-gradient(rgb(39, 27, 27), rgba(255,255,255,.15) 1px, transparent 30px),
+    radial-gradient(rgba(0, 242, 254, 0.1), transparent 400px) !important;
+  background-size: 550px 550px, 350px 350px, 100% 100% !important;
+  background-position: 0 0, 40px 60px, center center !important;
+  animation: shinyBackground 20s linear infinite;
+}
+
+/* Animation de scintillement lent du fond */
+@keyframes shinyBackground {
+  0% { background-position: 0 0, 40px 60px, center center; }
+  100% { background-position: 550px 550px, 390px 410px, center center; }
+}
+
+/* Style des sections de contenu */
+.shiny-section {
+  position: relative;
+  background: rgba(62, 101, 228, 0.6) !important; /* Translucide pour voir le fond brillant */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(145, 113, 113, 0.05);
+}
+
+/* Ligne lumineuse de séparation de section */
+.section-glow-line {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  width: 90%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00f2fe, #2D3F8A, transparent);
+}
+
+/* ==========================================================================
+   CONTOURS EN JEUX DE LUMIÈRE (EFFET GLOW CHIC)
+   ========================================================================== */
+
+/* 1. Contour des deux images de l'accueil */
+.hero-side-img img {
+  border: 2px solid rgba(0, 242, 254, 0.4) !important;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.25), 
+              0 0 30px rgba(0, 242, 254, 0.1) !important;
+  animation: auraLumineuse 4s ease-in-out infinite alternate !important;
+}
+
+/* 2. Contours des cartes (Compétences & Réalisations) */
+.glow-card {
+  background: rgba(28, 37, 65, 0.65) !important;
+  border: 1px solid rgba(0, 242, 254, 0.15) !important;
+  border-radius: 16px !important;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Jeu de lumière intense au survol des cartes */
+.glow-card:hover {
+  transform: translateY(-8px) scale(1.01) !important;
+  border-color: #00f2fe !important;
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.45), 
+              0 0 40px rgba(45, 63, 138, 0.3) !important;
+}
+
+/* 3. Contour des images dans les réalisations */
+.glow-img-container {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.glow-card:hover .glow-img-container {
+  border-color: #00f2fe !important;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.4) !important;
+}
+
+/* Animation de pulsation douce pour la lumière de l'accueil */
+@keyframes auraLumineuse {
+  0% {
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.2), 0 0 30px rgba(0, 242, 254, 0.1);
+    border-color: rgba(0, 242, 254, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.5), 0 0 50px rgba(0, 242, 254, 0.2);
+    border-color: rgba(0, 242, 254, 0.7);
+  }
+}
+
+/* Ajustement couleur des textes pour le fond sombre brillant */
+.section-header h2, .card h3 {
+  color: #ffffff !important;
+}
+.section-header p, .card p {
+  color: #cbd5e1 !important;
+}
+/* ==========================================================================
+   COMBINAISON : FLOTTAISON ET AURA LUMINEUSE DYNAMIQUE
+   ========================================================================== */
+.hero-side-img img {
+  border: 2px solid rgba(0, 242, 254, 0.4) !important;
+  width: 100%;
+  max-width: 250px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 16px;
+  
+  /* REPARATION : On lance les deux animations en même temps séparées par une virgule */
+  animation: floatHero 6s ease-in-out infinite, 
+             auraLumineuse 4s ease-in-out infinite alternate !important;
+}
+
+/* L'image de droite commence avec un petit décalage pour un effet plus naturel */
+.img-right img {
+  animation-delay: 1.5s, 0s !important;
+}
+
+/* 1. L'animation de mouvement (Flottaison) */
+@keyframes floatHero {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+/* 2. L'animation de lumière (Pulsation Néon) */
+@keyframes auraLumineuse {
+  0% {
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.2), 0 0 30px rgba(0, 242, 254, 0.1);
+    border-color: rgba(0, 242, 254, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.5), 0 0 50px rgba(0, 242, 254, 0.2);
+    border-color: rgba(0, 242, 254, 0.7);
+  }
 }
