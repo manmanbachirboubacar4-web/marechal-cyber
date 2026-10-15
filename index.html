@@ -45,7 +45,7 @@
         <div class="hero-content">
             <div class="badge">Disponible pour de nouveaux projets</div>
             <h1>Bonjour, je suis <span class="highlight">Maman Bachir</span></h1>
-            <p class="subtitle">Développeur Web Junior spécialisé en intégration HTML / CSS & Admin Systèmes</p>
+            <p class="subtitle">Développeur Web Junior spécialisé en intégration HTML / CSS, JavaScript, l'Inux, l'interne Windows Infographie & Admin Systèmes</p>
             <div class="hero-buttons">
                 <a href="#projets" class="btn-primary">Voir mes réalisations</a>
                 <a href="CV_Maman_Bachir.pdf" download="CV_Maman_Bachir.pdf" id="btn-cv-glow"
@@ -80,7 +80,7 @@
         <div class="cards-grid">
             <div class="card glow-card">
                 <div class="card-icon"><i class="fa-brands fa-html5"></i></div>
-                <h3>HTML5 / CSS3</h3>
+                <h3>HTML5 / CSS3 / JS</h3>
                 <p>Création d'interfaces web fluides, modernes, esthétiques et entièrement responsives.</p>
             </div>
             <div class="card glow-card">
@@ -91,7 +91,22 @@
             <div class="card glow-card">
                 <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
                 <h3>Outils & Workflow</h3>
-                <p>Maîtrise complète de VS Code, gestion de versions avec Git, et gestion de serveurs VPS.</p>
+                <p>Maîtrise complète de VS Code, MySQL, gestion de versions avec Git, et gestion de serveurs VPS.</p>
+            </div>
+            <div class="card glow-card">
+                <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <h3>Graphic-Designer</h3>
+                <p>Maîtrise d'Adobe Illistrator, Photoshop, Canva, Microsof-office.</p>
+            </div>
+            <div class="card glow-card">
+                <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <h3>Création affiche & Montage video</h3>
+                <p>Maîtrise CapCut, PlayPlay, Canva(Montage vidéo).</p>
+            </div>
+            <div class="card glow-card">
+                <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <h3>Installation et Configuration</h3>
+                <p>Ordinateurs et Imprimente, Starlink, Camera video, etc...</p>
             </div>
         </div>
     </div>
@@ -147,6 +162,86 @@
             </div>
         </div>
     </div>
+    <!-- Projet 4 : Réalisations Vidéo Interactives (Lecteur HTML5 intégré) -->
+<div class="card project-card glow-card video-card">
+    <div class="project-image-wrapper glow-img-container video-player-container">
+        
+        <!-- LE VRAI LECTEUR VIDÉO INTERACTIF -->
+        <!-- Optionnel : ajoutez poster="images/miniature.png" si vous voulez une image fixe avant la lecture -->
+        <video controls class="portfolio-video" preload="metadata">
+            <!-- REMPLACEZ 'videos/votre-pub.mp4' par le chemin et le nom exact de votre fichier vidéo -->
+            <source src="videos/Mon-pub.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture de vidéos HTML5.
+        </video>
+        
+        <div class="project-tag video-tag">Publicité Vidéo</div>
+    </div>
+    
+    <div class="project-content">
+        <h3>Création de Vidéos Publicitaires</h3>
+        <p>Conception et montage de spots promotionnels, vidéos de communication et animations graphiques sur-mesure pour dynamiser la visibilité de vos activités commerciales.</p>
+        
+        <!-- Bouton de contact direct ciblé WhatsApp -->
+        <a href="https://wa.me/22789780233" 
+           target="_blank" class="project-link video-link">
+           Commander une vidéo publicitaire <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+</div>
+<!-- Carte Playlist Vidéo Multimédia Pro -->
+<div class="card project-card glow-card video-playlist-card" style="grid-column: 1 / -1;">
+    <div class="section-header" style="padding: 20px 24px 0; text-align: left;">
+        <h3><i class="fa-solid fa-photo-film" style="color: #00f2fe; margin-right: 8px;"></i> Galerie de Réalisations Vidéo</h3>
+        <p>Cliquez sur les titres à droite pour changer de vidéo instantanément.</p>
+    </div>
+
+    <div class="playlist-container">
+        <!-- 1. ZONE DE LECTURE (Gauche) -->
+        <div class="video-screen-area">
+            <video id="main-portfolio-video" controls preload="metadata" controlsList="nodownload">
+                <!-- Vidéo par défaut qui se lance au début -->
+                <source id="video-source" src="videos/video1.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas le lecteur vidéo.
+            </video>
+            <div class="project-tag video-tag" id="current-video-tag">Spot P 1</div>
+        </div>
+
+        <!-- 2. ZONE DE SÉLECTION / LISTE DE LECTURE (Droite) -->
+        <div class="video-list-area">
+            <button class="playlist-item active" onclick="changeVideo('videos/video1.mp4', 'Spot Publicitaire 1')">
+                <div class="item-icon"><i class="fa-solid fa-play"></i></div>
+                <div class="item-text">
+                    <h4>1. Vidéo Promotionnelle Maréchal</h4>
+                    <p>Durée : 2:10 min Presentation portfolio-video
+                </div>
+            </button>
+
+            <button class="playlist-item" onclick="changeVideo('videos/video2.mp4', 'Présentation Projet')">
+                <div class="item-icon"><i class="fa-solid fa-play"></i></div>
+                <div class="item-text">
+                    <h4>2. Démo Administration Système &amp; BIND9</h4>
+                    <p>Durée : 2:15 min — Architecture réseau sous Ubuntu</p>
+                </div>
+            </button>
+
+            <button class="playlist-item" onclick="changeVideo('videos/video3.mp4', 'Spot Commercial')">
+                <div class="item-icon"><i class="fa-solid fa-play"></i></div>
+                <div class="item-text">
+                    <h4>3. Publicité Services Écoles &amp; ANSI</h4>
+                    <p>Durée : 3:00 min — Rapport technique détaillé</p>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="project-content" style="border-top: 1px solid var(--ligne); padding: 24px;">
+        <a href="https://wa.me/22789780233" 
+           target="_blank" class="project-link video-link" style="color: #25D366 !important; font-weight: 700; font-size: 16px;">
+           Commander une vidéo personnalisée <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+</div>
+
 </section>
 
         <!-- Section Contact Complète -->
@@ -178,6 +273,7 @@
         <p>&copy; 2026 Maman Bachir. Conçu de manière professionnelle. Tous droits réservés.</p>
     </footer>
 
+    
     <!-- Script pour le Mode Sombre -->
     <script>
         const toggleBtn = document.getElementById('dark-mode-toggle');
@@ -191,6 +287,26 @@
                 icon.className = 'fa-solid fa-moon';
             }
         });
+        function changeVideo(videoPath, tagTitle) {
+    const videoElement = document.getElementById('main-portfolio-video');
+    const sourceElement = document.getElementById('video-source');
+    const tagElement = document.getElementById('current-video-tag');
+    
+    // 1. Change la source et le texte du tag
+    sourceElement.src = videoPath;
+    tagElement.textContent = tagTitle;
+    
+    // 2. Recharge et lance le nouveau lecteur
+    videoElement.load();
+    videoElement.play();
+    
+    // 3. Met à jour le style visuel du bouton sélectionné
+    const items = document.querySelectorAll('.playlist-item');
+    items.forEach(item => item.classList.remove('active'));
+    
+    // Ajoute la classe active au bouton cliqué
+    event.currentTarget.classList.add('active');
+}
     </script>
 </body>
 </html>
