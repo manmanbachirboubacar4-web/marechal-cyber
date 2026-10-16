@@ -1,0 +1,32 @@
+/* Chat WhatsApp intégré — Maréchal */
+.wa-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.2rem;border:1px solid rgba(255,255,255,.35);border-radius:10px;background:#0b0b0d;color:#fff;font:600 1rem/1 system-ui,sans-serif;cursor:pointer;transition:.2s}
+.wa-btn:hover{background:#0f3d24;border-color:#25d366}
+.wa-btn svg{width:20px;height:20px;fill:currentColor}
+
+.wa-chat{position:fixed;right:16px;bottom:16px;width:min(360px,calc(100vw - 32px));max-height:80vh;display:flex;flex-direction:column;
+ background:#0f1a3a;color:#f3ede2;border:1px solid rgba(255,255,255,.12);border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.6);
+ font-family:system-ui,sans-serif;overflow:hidden;z-index:9999;
+ opacity:0;transform:translateY(24px) scale(.97);pointer-events:none;transition:.28s cubic-bezier(.2,.8,.2,1)}
+.wa-chat.open{opacity:1;transform:none;pointer-events:auto}
+.wa-head{display:flex;align-items:center;gap:.75rem;padding:.9rem 1rem;background:#162350;border-bottom:1px solid rgba(255,255,255,.08)}
+.wa-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;background:#00f2fe;color:#0a1128;display:grid;place-items:center;font-weight:800}
+.wa-name{font-weight:700}
+.wa-status{font:.7rem ui-monospace,monospace;letter-spacing:.12em;color:#25d366;text-transform:uppercase}
+.wa-status::before{content:"● "}
+.wa-close{margin-left:auto;background:none;border:0;color:#cfc8bb;font-size:1.4rem;cursor:pointer}
+.wa-body{padding:1rem;display:flex;flex-direction:column;gap:.6rem;overflow-y:auto;min-height:120px}
+.wa-msg{max-width:85%;padding:.6rem .85rem;border-radius:14px;font-size:.92rem;line-height:1.35;animation:waIn .3s ease}
+.wa-in{align-self:flex-start;background:#1c2541;border-bottom-left-radius:4px}
+.wa-out{align-self:flex-end;background:#00f2fe;color:#0a1128;border-bottom-right-radius:4px;font-weight:600}
+.wa-typing{align-self:flex-start;background:#1c2541;padding:.6rem .85rem;border-radius:14px;display:flex;gap:4px}
+.wa-typing i{width:6px;height:6px;border-radius:50%;background:#9d96a8;animation:waDot 1s infinite}
+.wa-typing i:nth-child(2){animation-delay:.15s}.wa-typing i:nth-child(3){animation-delay:.3s}
+.wa-quick{display:flex;flex-wrap:wrap;gap:.4rem;padding:0 1rem .6rem}
+.wa-quick button{background:transparent;border:1px solid #00f2fe;color:#00f2fe;border-radius:999px;padding:.35rem .8rem;font-size:.8rem;cursor:pointer}
+.wa-quick button:hover{background:#00f2fe;color:#0a1128}
+.wa-form{display:flex;gap:.5rem;padding:.75rem;border-top:1px solid rgba(255,255,255,.08);background:#162350}
+.wa-form input{flex:1;background:#0a1128;border:1px solid rgba(255,255,255,.15);border-radius:999px;color:#fff;padding:.65rem 1rem;font-size:.92rem;outline:none}
+.wa-form input:focus{border-color:#25d366}
+.wa-form button{width:42px;height:42px;border:0;border-radius:50%;background:#25d366;color:#fff;font-size:1.1rem;cursor:pointer}
+@keyframes waIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes waDot{0%,60%,100%{opacity:.3}30%{opacity:1}}
